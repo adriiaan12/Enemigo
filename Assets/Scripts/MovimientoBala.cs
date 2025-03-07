@@ -7,15 +7,20 @@ public class MovimientoBala : MonoBehaviour
 
     public LayerMask collisionMask;
 
+    public delegate void OnDeath();
+
+    public static event OnDeath OnDeathAnother;
 
 
-    // alled once before the first execution of Update after the MonoBehaviour is created
+
+
+    
     void Start()
     {
         
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
         float moveDistance = velocidad * Time.deltaTime;
@@ -47,6 +52,11 @@ public class MovimientoBala : MonoBehaviour
             {
                 enemigo.TakeHit(1);
             }
+        }
+
+        if(OnDeathAnother != null)
+        {
+            OnDeathAnother();
         }
         
     }
