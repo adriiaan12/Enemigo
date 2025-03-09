@@ -192,6 +192,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bala
       objectReference: {fileID: 0}
+    - target: {fileID: 4138114221502402133, guid: c744d00f25a5b6d42aaa22bbba38e7d1, type: 3}
+      propertyPath: collisionMask.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
     - target: {fileID: 4254072402212182684, guid: c744d00f25a5b6d42aaa22bbba38e7d1, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.1
@@ -526,7 +530,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3086174890345637103, guid: 3dc70c54c0c669948added2462630a3f, type: 3}
       propertyPath: startingHealth
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5989875153427786725, guid: 3dc70c54c0c669948added2462630a3f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -980,7 +984,7 @@ Transform:
   m_GameObject: {fileID: 1005740150}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.9974308, y: 0.451, z: -1.61}
+  m_LocalPosition: {x: -0.9974308, y: 0.451, z: -10.97}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -1302,10 +1306,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   olaEnemigos:
   - tipoEnemigo: {fileID: 363634676}
-    numEnemigos: 1
+    numEnemigos: 2
     tiempoEnemigos: 2
   - tipoEnemigo: {fileID: 363634676}
-    numEnemigos: 2
+    numEnemigos: 3
     tiempoEnemigos: 2
 --- !u!4 &1611705731
 Transform:
@@ -1528,7 +1532,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: 23e77a59e8c2a074ca0f797c4c1da9d2, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 3f444d85e8c455d479deedb5bd77171e, type: 2}
   m_BuildHeightMesh: 0
 --- !u!1001 &3254632714204788353
 PrefabInstance:

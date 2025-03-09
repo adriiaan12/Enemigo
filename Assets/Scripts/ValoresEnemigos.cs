@@ -1,13 +1,10 @@
 using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
+using System;
 
-[System.Serializable]
+[System.Serializable]  // Permite que aparezca en el Inspector dentro de otra clase
 public class ValoresEnemigos
 {
     public GameObject tipoEnemigo;
     public int numEnemigos;
     public int tiempoEnemigos;
-
-
 }
