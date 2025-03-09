@@ -5,11 +5,6 @@ using UnityEngine;
 using UnityEngine.Timeline;
 
 
-
-
-
-
-
 public class MovimientoEnemigo : LivingEntity
 {
     UnityEngine.AI.NavMeshAgent pathfinder;
@@ -32,6 +27,8 @@ public class MovimientoEnemigo : LivingEntity
     float damage = 1;
 
     public Animator animator;
+
+    
 
 
     void Awake()

@@ -1,8 +1,8 @@
 using UnityEngine;
 using System.Collections.Generic;
+
 public class DisparoBala : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     public Transform salida;
     public GameObject bala;
     public float tiempoDisparo = 0.5f;
@@ -10,6 +10,12 @@ public class DisparoBala : MonoBehaviour
 
     public int tamanoPool = 20;
     private List<GameObject> poolBalas;
+
+    public AudioSource sonidoDisparo;
+    public AudioClip clipDisparo;  // Declarar el clip de audio como público
+
+    public float volumen = 0.2f;
+
     void Start()
     {
         poolBalas = new List<GameObject>();
@@ -19,42 +25,60 @@ public class DisparoBala : MonoBehaviour
             obj.SetActive(false);
             poolBalas.Add(obj);
         }
-        
-    }
-    public void Disparar(){
 
-        if(Time.time > proximoDisparo){ 
-                GameObject balaDisponible = ObtenerBalaDisponible();
-                if(balaDisponible != null){
-                    balaDisponible.transform.position = salida.position;
-                    balaDisponible.transform.rotation = salida.rotation;
-                    balaDisponible.SetActive(true);
-                    proximoDisparo = Time.time + tiempoDisparo;
-                } 
-
-
+        // Asignar el clip de audio manualmente
+        if (clipDisparo != null)
+        {
+            sonidoDisparo.clip = clipDisparo;
+            sonidoDisparo.volume = volumen;  // Ajustar el volumen aquí
         }
-
+        else
+        {
+            Debug.LogWarning("No se ha asignado el clip de disparo.");
+        }
     }
 
-    private GameObject ObtenerBalaDisponible(){
+    public void Disparar()
+    {
+        if (Time.time > proximoDisparo)
+        {
+            GameObject balaDisponible = ObtenerBalaDisponible();
+            if (balaDisponible != null)
+            {
+                balaDisponible.transform.position = salida.position;
+                balaDisponible.transform.rotation = salida.rotation;
+                balaDisponible.SetActive(true);
+                proximoDisparo = Time.time + tiempoDisparo;
+
+                if (sonidoDisparo != null && sonidoDisparo.clip != null)
+                {
+                    sonidoDisparo.PlayOneShot(sonidoDisparo.clip);
+                }
+                else
+                {
+                    Debug.LogWarning("No hay sonido de disparo asignado.");
+                }
+            }
+        }
+    }
+
+    private GameObject ObtenerBalaDisponible()
+    {
         for (int i = 0; i < poolBalas.Count; i++)
         {
-            if(!poolBalas[i].activeInHierarchy){
+            if (!poolBalas[i].activeInHierarchy)
+            {
                 return poolBalas[i];
             }
         }
 
-    GameObject obj = Instantiate(bala);
-    obj.SetActive(false);
-    poolBalas.Add(obj);
-    return obj;
-        
+        GameObject obj = Instantiate(bala);
+        obj.SetActive(false);
+        poolBalas.Add(obj);
+        return obj;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
     }
 }
