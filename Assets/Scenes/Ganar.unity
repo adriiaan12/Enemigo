@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: e62eb97b5fdfe144aa799b583955a072, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -1306,10 +1306,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   olaEnemigos:
   - tipoEnemigo: {fileID: 363634676}
-    numEnemigos: 2
+    numEnemigos: 5
     tiempoEnemigos: 2
   - tipoEnemigo: {fileID: 363634676}
-    numEnemigos: 3
+    numEnemigos: 7
     tiempoEnemigos: 2
 --- !u!4 &1611705731
 Transform:
@@ -1457,7 +1457,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ac23bdc03b14cc54ba49cef4d95e5228, type: 2}
+  - {fileID: 2100000, guid: 5430612ada46c4541b0adefdd19f947d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1542,6 +1542,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2152830499754164237, guid: f428988dedd926046b9a6c32b8ce2da0, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 81a5cc2b0ce6ead4dbfc6b210e4bb099, type: 2}
     - target: {fileID: 2237983938293274780, guid: f428988dedd926046b9a6c32b8ce2da0, type: 3}
       propertyPath: m_Name
       value: Pared
