@@ -39,6 +39,10 @@ public class Ordas : MonoBehaviour
                 enemigo.OnDeath += EnemigoMuerto;
             }
         }
+
+
+
+
     }
 
     void EnemigoMuerto()
@@ -54,17 +58,38 @@ public class Ordas : MonoBehaviour
 
     void NextOla()
     {
-        if (numeroOlaActual >= olaEnemigos.Length)
+        Debug.Log(SceneManager.GetActiveScene().name);
+
+        // Obtener la escena actual
+        string escenaActual = SceneManager.GetActiveScene().name;
+
+        // Si estamos en "Perdiste" y no quedan más oleadas, ir a "HasGanado"
+        if (escenaActual == "Perdiste" && numeroOlaActual >= olaEnemigos.Length)
         {
-            Debug.Log("¡Todas las olas completadas!");
-            SceneManager.LoadScene("Ganar");
+            SceneManager.LoadScene("HasGanado");
             return;
         }
 
+        // Si estamos en "Ganar" y no quedan más oleadas, ir a "Perdiste"
+        if (escenaActual == "Ganar" && numeroOlaActual >= olaEnemigos.Length)
+        {
+            SceneManager.LoadScene("Perdiste");
+            return;
+        }
+
+        // Si estamos en otra escena y terminan las oleadas, no hacer nada
+        if (numeroOlaActual >= olaEnemigos.Length)
+        {
+            Debug.Log("¡Todas las olas completadas!");
+            return;
+        }
+
+        // Iniciar la siguiente ola
         Debug.Log("Iniciando ola " + (numeroOlaActual + 1));
         olaActual = olaEnemigos[numeroOlaActual];
         enemigosPorCrear = olaActual.numEnemigos;
         enemigosVivos = 0;
         numeroOlaActual++;
     }
+
 }

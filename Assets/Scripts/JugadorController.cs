@@ -48,7 +48,7 @@ public class JugadorController : LivingEntity
        void OnJugadorMuerte()
     {
         // Cargar la escena de "Perder"
-        SceneManager.LoadScene("Perdiste");
+        SceneManager.LoadScene("HasPerdido");
     }
 
     // Update is called once per frame

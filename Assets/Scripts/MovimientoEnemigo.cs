@@ -4,9 +4,14 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Timeline;
 
+
+
+
+
+
+
 public class MovimientoEnemigo : LivingEntity
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     UnityEngine.AI.NavMeshAgent pathfinder;
     Transform target;
     float mycollisionRadius;
@@ -25,6 +30,8 @@ public class MovimientoEnemigo : LivingEntity
 
     LivingEntity targetEntity;
     float damage = 1;
+
+    public Animator animator;
 
 
     void Awake()
@@ -48,6 +55,7 @@ public class MovimientoEnemigo : LivingEntity
     // Update is called once per frame
     void Update()
     {
+
         if (!Atacando)
         {
 

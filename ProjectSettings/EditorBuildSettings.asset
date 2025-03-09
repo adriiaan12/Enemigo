@@ -14,6 +14,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Perdiste.unity
     guid: 268d7d325f7747d478829ad593e4febb
+  - enabled: 1
+    path: Assets/Scenes/HasPerdido.unity
+    guid: c7802b7eea37fdc49b3a0006847a9d80
+  - enabled: 1
+    path: Assets/Scenes/HasGanado.unity
+    guid: b0839c596ff156c4db255db58392cbec
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

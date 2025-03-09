@@ -57,7 +57,7 @@ public class ContadorScript : MonoBehaviour
             }
             else
             {
-                SceneManager.LoadScene("Perdiste");
+                SceneManager.LoadScene("Ganar");
                 yield break;
             }
         }
